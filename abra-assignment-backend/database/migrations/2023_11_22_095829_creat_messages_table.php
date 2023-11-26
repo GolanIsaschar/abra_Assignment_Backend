@@ -19,7 +19,7 @@ return new class extends Migration
             $table->tinyInteger('userRecivierId');
             $table->text('messageContent');
             $table->text('messageSubject');
-            $table->tinyInteger('isRead');
+            $table->tinyInteger('isRead')->default('0');;
             $table->timestamp('creationDate');
         });
     }
