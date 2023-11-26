@@ -24,7 +24,7 @@ class MessageController extends Controller
             $messageData['messageContent'] = strip_tags($messageData['messageContent']);
             $messageData['messageSubject'] = strip_tags($messageData['messageSubject']);
             $messageData['userSenderId'] = auth()->id();
-
+            $messageData['isRead'] = 0;
             $newMessage = Message::create($messageData);
 
             return response()->json(['success' => 'Your messages sent succesfully', 'message' => $newMessage]);
